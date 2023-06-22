@@ -37,3 +37,7 @@ export const updateSpecies = async (id: string, speciesBody: updateSpeciesDTO) =
 
   return readSpecies(id)
 }
+
+export const deleteSpecies = async (id: string) => {
+  return Species.findByIdAndDelete(id)
+}

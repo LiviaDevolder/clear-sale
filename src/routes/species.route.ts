@@ -4,19 +4,10 @@ import { speciesController } from "../modules/species"
 const router: Router = express.Router()
 
 router
-  .route("/")
-  .post(speciesController.createSpecies)
-
-router
-  .route("/")
-  .get(speciesController.readAllSpecies)
-
-router
-  .route("/:id")
-  .get(speciesController.readSpecies)
-
-router
-  .route("/:id")
-  .put(speciesController.updateSpecies)
+  .post("/", speciesController.createSpecies)
+  .get("/",speciesController.readAllSpecies)
+  .get("/:id", speciesController.readSpecies)
+  .put("/:id", speciesController.updateSpecies)
+  .delete("/:id", speciesController.deleteSpecies)
 
 export default router

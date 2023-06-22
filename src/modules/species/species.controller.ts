@@ -21,3 +21,8 @@ export const updateSpecies = async (req: Request, res: Response) => {
   const species = await speciesService.updateSpecies(req.params.id, req.body)
   res.status(httpStatus.OK).send(species)
 }
+
+export const deleteSpecies = async (req: Request, res: Response) => {
+  const species = await speciesService.deleteSpecies(req.params.id)
+  res.status(httpStatus.NO_CONTENT).send(species)
+}
