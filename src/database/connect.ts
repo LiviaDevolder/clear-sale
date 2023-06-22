@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb"
+import mongoose from "mongoose"
 
 export default class Database {
   private static instance: Database
@@ -14,9 +14,8 @@ export default class Database {
   }
 
   public async connect() {
-    const client = new MongoClient(process.env.DB_CONNECTION!)
-    await client.connect().then((connection) =>
-      connection.db(process.env.DB_DATABASE)
-    )
+    await mongoose.connect(process.env.DB_CONNECTION!)
+      .then()
+      .catch((err) => console.log(err))
   }
 }
