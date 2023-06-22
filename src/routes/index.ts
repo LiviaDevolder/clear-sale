@@ -1,9 +1,22 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response, Router } from "express";
+import speciesRoute from "./species.route";
 
-const router = express.Router();
+const router: Router = express.Router();
 
-router.get('/api', [], (req: Request, res: Response) => {
-  return res.send('Hello World!')
-})
+interface IRoute {
+  path: string;
+  route: Router;
+}
+
+const defaultIRoute: IRoute[] = [
+  {
+    path: '/species',
+    route: speciesRoute,
+  }
+]
+
+defaultIRoute.forEach((route) => {
+  router.use(route.path, route.route);
+});
 
 export { router }
