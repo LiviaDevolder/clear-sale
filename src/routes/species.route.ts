@@ -11,4 +11,12 @@ router
   .route("/")
   .get(speciesController.readAllSpecies)
 
+router
+  .route("/:id")
+  .get(speciesController.readSpecies)
+
+router
+  .route("/:id")
+  .put(speciesController.updateSpecies)
+
 export default router
