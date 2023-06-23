@@ -2,7 +2,7 @@ import mongoose, { Schema, Model, Document } from 'mongoose';
 
 type SpeciesDocument = Document & {
   name: string;
-  description: string | null;
+  description: string;
 };
 
 type SpeciesInput = {

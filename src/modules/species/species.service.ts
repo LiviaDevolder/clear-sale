@@ -1,13 +1,26 @@
+import httpStatus from 'http-status'
 import { createSpeciesDTO } from './dto/create-species.dto'
 import { updateSpeciesDTO } from './dto/update-species.dto'
 import { Species } from './species.model'
-import mongoose from 'mongoose'
+import { ApiError } from '../../utils/ApiError'
+import { validateId } from '../../utils/validateId'
+
+export const readSpecies = async (id: string) => {
+  validateId(id)
+
+  const species = await Species.findOne({ _id: id })
+
+  if (!species) throw new ApiError(httpStatus.NOT_FOUND, `Species with id "${id}" not found.`)
+
+  return species
+}
 
 export const createSpecies = async (speciesBody: createSpeciesDTO) => {
-  const species = new Species({
-    _id: new mongoose.Types.ObjectId(),
-    ...speciesBody
-  })
+  if (!speciesBody.name || !speciesBody.description) {
+    throw new ApiError(httpStatus.UNPROCESSABLE_ENTITY, 'All fields must be filled correctly')
+  }
+
+  const species = new Species(speciesBody)
 
   return Species.create(species)
 }
@@ -16,21 +29,15 @@ export const readAllSpecies = async () => {
   return Species.find().sort('-createdAt').exec()
 }
 
-export const readSpecies = async (id: string) => {
-  const species = await Species.findOne({ _id: id })
-
-  if (!species) throw new Error(`Role with id "${id}" not found.`)
-
-  return species
-}
-
 export const updateSpecies = async (id: string, speciesBody: updateSpeciesDTO) => {
+  validateId(id)
+
   const species = await readSpecies(id)
 
-  if (!species) throw new Error(`Role with id "${id}" not found.`)
+  if (!species) throw new ApiError(httpStatus.NOT_FOUND, `Species with id "${id}" not found.`)
 
   if (!speciesBody.name || !speciesBody.description) {
-    throw new Error('The fields name and description are required')
+    throw new ApiError(httpStatus.UNPROCESSABLE_ENTITY, 'All fields must be filled correctly')
   }
 
   await Species.updateOne({ _id: id }, speciesBody)
@@ -39,5 +46,9 @@ export const updateSpecies = async (id: string, speciesBody: updateSpeciesDTO) =
 }
 
 export const deleteSpecies = async (id: string) => {
-  return Species.findByIdAndDelete(id)
+  validateId(id)
+
+  await readSpecies(id)
+
+  await Species.deleteOne({ _id: id })
 }
