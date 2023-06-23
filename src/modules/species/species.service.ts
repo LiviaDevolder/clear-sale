@@ -1,7 +1,7 @@
 import httpStatus from 'http-status'
 import { createSpeciesDTO } from './dto/create-species.dto'
 import { updateSpeciesDTO } from './dto/update-species.dto'
-import { Species } from './species.model'
+import { Species } from '.'
 import { ApiError } from '../../utils/ApiError'
 import { validateId } from '../../utils/validateId'
 
@@ -35,10 +35,6 @@ export const updateSpecies = async (id: string, speciesBody: updateSpeciesDTO) =
   const species = await readSpecies(id)
 
   if (!species) throw new ApiError(httpStatus.NOT_FOUND, `Species with id "${id}" not found.`)
-
-  if (!speciesBody.name || !speciesBody.description) {
-    throw new ApiError(httpStatus.UNPROCESSABLE_ENTITY, 'All fields must be filled correctly')
-  }
 
   await Species.updateOne({ _id: id }, speciesBody)
 

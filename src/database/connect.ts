@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import mongoose from "mongoose"
 
 export default class Database {
@@ -14,7 +15,7 @@ export default class Database {
   }
 
   public async connect() {
-    await mongoose.connect(process.env.DB_CONNECTION!)
+    await mongoose.connect(process.env.DB_CONNECTION ?? '')
       .then()
       .catch((err) => console.log(err))
   }

@@ -1,5 +1,6 @@
-import express, { Request, Response, Router } from "express";
+import express, { Router } from "express";
 import speciesRoute from "./species.route";
+import weaponsRoute from "./weapons.route";
 
 const router: Router = express.Router();
 
@@ -12,6 +13,10 @@ const defaultIRoute: IRoute[] = [
   {
     path: '/species',
     route: speciesRoute,
+  },
+  {
+    path: '/weapons',
+    route: weaponsRoute,
   }
 ]
 
