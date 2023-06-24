@@ -77,7 +77,7 @@ const charactersSchema = new Schema(
     },
   },
   {
-    collection: 'locations',
+    collection: 'characters',
     timestamps: true,
   },
 )
