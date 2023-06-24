@@ -3,6 +3,7 @@ import speciesRoute from "./species.route"
 import weaponsRoute from "./weapons.route"
 import locationsRoute from "./locations.route"
 import charactersRoute from "./characters.route"
+import musicsRoute from "./musics.route"
 
 const router: Router = express.Router()
 
@@ -27,6 +28,10 @@ const defaultIRoute: IRoute[] = [
   {
     path: '/characters',
     route: charactersRoute,
+  },
+  {
+    path: '/musics',
+    route: musicsRoute,
   },
 ]
 

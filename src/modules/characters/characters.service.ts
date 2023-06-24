@@ -78,10 +78,7 @@ export const readAllCharacters = async () => {
 
 export const updateCharacters = async (id: string, charactersBody: updateCharactersDTO) => {
   validateId(id)
-
-  const characters = await readCharacters(id)
-
-  if (!characters) throw new ApiError(httpStatus.NOT_FOUND, `Characters with id "${id}" not found.`)
+  await readCharacters(id)
 
   await Characters.updateOne({ _id: id }, charactersBody)
 

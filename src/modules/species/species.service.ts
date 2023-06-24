@@ -31,10 +31,7 @@ export const readAllSpecies = async () => {
 
 export const updateSpecies = async (id: string, speciesBody: updateSpeciesDTO) => {
   validateId(id)
-
-  const species = await readSpecies(id)
-
-  if (!species) throw new ApiError(httpStatus.NOT_FOUND, `Species with id "${id}" not found.`)
+  await readSpecies(id)
 
   await Species.updateOne({ _id: id }, speciesBody)
 

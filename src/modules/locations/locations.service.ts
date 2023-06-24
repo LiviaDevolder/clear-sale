@@ -34,19 +34,12 @@ export const createLocations = async (locationsBody: createLocationsDTO) => {
 export const readAllLocations = async () => {
   return Locations.find().populate({
       path: "dominant_species_id",
-      populate: {
-         path: "name",
-         select: { body: 1 }
-      }
    }).sort('-createdAt').exec()
 }
 
 export const updateLocations = async (id: string, locationsBody: updateLocationsDTO) => {
   validateId(id)
-
-  const locations = await readLocations(id)
-
-  if (!locations) throw new ApiError(httpStatus.NOT_FOUND, `Locations with id "${id}" not found.`)
+  await readLocations(id)
 
   await Locations.updateOne({ _id: id }, locationsBody)
 

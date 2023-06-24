@@ -31,10 +31,7 @@ export const readAllWeapons = async () => {
 
 export const updateWeapons = async (id: string, weaponsBody: updateWeaponsDTO) => {
   validateId(id)
-
-  const weapons = await readWeapons(id)
-
-  if (!weapons) throw new ApiError(httpStatus.NOT_FOUND, `Weapons with id "${id}" not found.`)
+  await readWeapons(id)
 
   await Weapons.updateOne({ _id: id }, weaponsBody)
 
