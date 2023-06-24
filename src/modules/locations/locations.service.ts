@@ -9,7 +9,13 @@ import { readSpecies } from '../species/species.service'
 export const readLocations = async (id: string) => {
   validateId(id)
 
-  const locations = await Locations.findOne({ _id: id })
+  const locations = await Locations.findOne({ _id: id }).populate({
+      path: "dominant_species_id",
+      populate: {
+         path: "name",
+         select: { body: 1 }
+      }
+   }).exec()
 
   if (!locations) throw new ApiError(httpStatus.NOT_FOUND, `Locations with id "${id}" not found.`)
 
@@ -30,7 +36,13 @@ export const createLocations = async (locationsBody: createLocationsDTO) => {
 }
 
 export const readAllLocations = async () => {
-  return Locations.find().sort('-createdAt').exec()
+  return Locations.find().populate({
+      path: "dominant_species_id",
+      populate: {
+         path: "name",
+         select: { body: 1 }
+      }
+   }).sort('-createdAt').exec()
 }
 
 export const updateLocations = async (id: string, locationsBody: updateLocationsDTO) => {
