@@ -14,23 +14,14 @@ export const readCharacters = async (id: string) => {
   const characters = await Characters.findOne({ _id: id }).populate([{
       path: "home_location_id",
       populate: {
-        path: "name",
-        select: { body: 1 }
+        path: "dominant_species_id"
       }
     },
     {
-      path: "species_id",
-      populate: {
-        path: "name",
-        select: { body: 1 }
-      }
+      path: "species_id"
     },
     {
       path: "weapon_id",
-      populate: {
-         path: "name",
-        select: { body: 1 }
-      }
     },
   ]).exec()
 
@@ -73,23 +64,14 @@ export const readAllCharacters = async () => {
   return Characters.find().populate([{
       path: "home_location_id",
       populate: {
-        path: "name",
-        select: { body: 1 }
+        path: "dominant_species_id"
       }
     },
     {
-      path: "species_id",
-      populate: {
-        path: "name",
-        select: { body: 1 }
-      }
+      path: "species_id"
     },
     {
       path: "weapon_id",
-      populate: {
-         path: "name",
-        select: { body: 1 }
-      }
     },
   ]).sort('-createdAt').exec()
 }

@@ -11,10 +11,6 @@ export const readLocations = async (id: string) => {
 
   const locations = await Locations.findOne({ _id: id }).populate({
       path: "dominant_species_id",
-      populate: {
-         path: "name",
-         select: { body: 1 }
-      }
    }).exec()
 
   if (!locations) throw new ApiError(httpStatus.NOT_FOUND, `Locations with id "${id}" not found.`)
