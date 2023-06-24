@@ -1,14 +1,14 @@
-import mongoose, { Schema, Model, Document } from 'mongoose';
+import mongoose, { Schema, Model, Document } from 'mongoose'
 
 type SpeciesDocument = Document & {
-  name: string;
-  description: string;
-};
+  name: string
+  description: string
+}
 
 type SpeciesInput = {
-  name: SpeciesDocument['name'];
-  description: SpeciesDocument['description'];
-};
+  name: SpeciesDocument['name']
+  description: SpeciesDocument['description']
+}
 
 const speciesSchema = new Schema(
   {
@@ -26,8 +26,8 @@ const speciesSchema = new Schema(
     collection: 'species',
     timestamps: true,
   },
-);
+)
 
 const Species: Model<SpeciesDocument> = mongoose.model<SpeciesDocument>('Species', speciesSchema)
 
-export { Species, SpeciesInput, SpeciesDocument };
+export { Species, SpeciesInput, SpeciesDocument }

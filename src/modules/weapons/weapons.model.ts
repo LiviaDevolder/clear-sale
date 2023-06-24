@@ -1,16 +1,16 @@
-import mongoose, { Schema, Model, Document } from 'mongoose';
+import mongoose, { Schema, Model, Document } from 'mongoose'
 
 type WeaponsDocument = Document & {
   name: string
   type: string
-  image: string;
-};
+  image: string
+}
 
 type WeaponsInput = {
   name: WeaponsDocument['name']
   type: WeaponsDocument['type']
   image: WeaponsDocument['image']
-};
+}
 
 const weaponsSchema = new Schema(
   {
@@ -33,8 +33,8 @@ const weaponsSchema = new Schema(
     collection: 'weapons',
     timestamps: true,
   },
-);
+)
 
 const Weapons: Model<WeaponsDocument> = mongoose.model<WeaponsDocument>('Weapons', weaponsSchema)
 
-export { Weapons, WeaponsInput, WeaponsDocument };
+export { Weapons, WeaponsInput, WeaponsDocument }
