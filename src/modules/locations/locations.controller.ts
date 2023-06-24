@@ -11,7 +11,7 @@ export const createLocations = async (req: Request, res: Response) => {
   } catch (e) {
     if (e instanceof ApiError) res.status(e.statusCode).send(e.message)
     if (e instanceof MongoServerError) res.status(httpStatus.UNPROCESSABLE_ENTITY).send(e.message)
-    console.log(e)
+    res.status(httpStatus.NOT_FOUND).send(JSON.stringify({ error: e}))
   }
 }
 
@@ -22,7 +22,7 @@ export const readLocations = async (req: Request, res: Response) => {
   } catch (e) {
     if (e instanceof ApiError) res.status(e.statusCode).send(e.message)
     if (e instanceof MongoServerError) res.status(httpStatus.UNPROCESSABLE_ENTITY).send(e.message)
-    console.log(e)
+    res.status(httpStatus.NOT_FOUND).send(JSON.stringify({ error: e}))
   }
 }
 
@@ -33,7 +33,7 @@ export const readAllLocations = async (req: Request, res: Response) => {
   } catch (e) {
     if (e instanceof ApiError) res.status(e.statusCode).send(e.message)
     if (e instanceof MongoServerError) res.status(httpStatus.UNPROCESSABLE_ENTITY).send(e.message)
-    console.log(e)
+    res.status(httpStatus.NOT_FOUND).send(JSON.stringify({ error: e}))
   }
 }
 
@@ -44,7 +44,7 @@ export const updateLocations = async (req: Request, res: Response) => {
   } catch (e) {
     if (e instanceof ApiError) res.status(e.statusCode).send(e.message)
     if (e instanceof MongoServerError) res.status(httpStatus.UNPROCESSABLE_ENTITY).send(e.message)
-    console.log(e)
+    res.status(httpStatus.NOT_FOUND).send(JSON.stringify({ error: e}))
   }
 }
 
@@ -55,6 +55,6 @@ export const deleteLocations = async (req: Request, res: Response) => {
   } catch (e) {
     if (e instanceof ApiError) res.status(e.statusCode).send(e.message)
     if (e instanceof MongoServerError) res.status(httpStatus.UNPROCESSABLE_ENTITY).send(e.message)
-    console.log(e)
+    res.status(httpStatus.NOT_FOUND).send(JSON.stringify({ error: e}))
   }
 }
