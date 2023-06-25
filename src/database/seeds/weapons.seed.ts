@@ -30,6 +30,11 @@ export const createWeapons = () => {
       name: "Brown Yo-Yo",
       type: "Yo-Yo",
       image: "https://static.wikia.nocookie.net/steven-universe/images/8/82/Smokey_quartz_yoyo_weapon.png"
+    },
+    {
+      name: "Guitar",
+      type: "Guitar",
+      image: "https://static.wikia.nocookie.net/steven-universe/images/b/b6/Greg%27s_guitar-0.png"
     }
   ]
 

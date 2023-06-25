@@ -60,6 +60,12 @@ export const createCharacters = async (charactersBody: createCharactersDTO) => {
   return Characters.create(characters)
 }
 
+export const readCharactersByName = async (name: string) => {
+  const characters = await Characters.findOne({ name })
+
+  return characters
+}
+
 export const readAllCharacters = async () => {
   return Characters.find().populate([{
       path: "home_location_id",
