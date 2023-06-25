@@ -1,9 +1,7 @@
 import mongoose, { Schema, Model, Document } from 'mongoose'
+import { createSpeciesDTO } from './dto/create-species.dto'
 
-type SpeciesDocument = Document & {
-  name: string
-  description: string
-}
+type SpeciesDocument = Document & createSpeciesDTO
 
 type SpeciesInput = {
   name: SpeciesDocument['name']

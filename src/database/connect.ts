@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import mongoose from "mongoose"
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export default class Database {
   private static instance: Database
