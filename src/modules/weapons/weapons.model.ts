@@ -1,10 +1,7 @@
 import mongoose, { Schema, Model, Document } from 'mongoose'
+import { createWeaponsDTO } from './dto/create-weapons.dto'
 
-type WeaponsDocument = Document & {
-  name: string
-  type: string
-  image: string
-}
+type WeaponsDocument = Document & createWeaponsDTO
 
 type WeaponsInput = {
   name: WeaponsDocument['name']

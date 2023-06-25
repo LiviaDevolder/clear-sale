@@ -25,6 +25,12 @@ export const createWeapons = async (weaponsBody: createWeaponsDTO) => {
   return Weapons.create(weapons)
 }
 
+export const readWeaponsByName = async (name: string) => {
+  const weapons = await Weapons.findOne({ name })
+
+  return weapons
+}
+
 export const readAllWeapons = async () => {
   return Weapons.find().sort('-createdAt').exec()
 }
