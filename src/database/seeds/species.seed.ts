@@ -1,6 +1,7 @@
 import { Species } from "../../modules/species";
 import { createSpeciesDTO } from "../../modules/species/dto/create-species.dto"
 import { SpeciesDocument } from "../../modules/species/species.model";
+import { readSpeciesByName } from "../../modules/species/species.service";
 
 export const createSpecies = () => {
   const promises: Promise<SpeciesDocument>[] = []
@@ -20,10 +21,14 @@ export const createSpecies = () => {
   ]
 
   for (let i = 0; i < data.length; i++) {
-    const species = new Species(data[i])
+    const species = readSpeciesByName(data[i].name).then(existingSpecies => {
+      if (existingSpecies) return existingSpecies
 
-    promises.push(species.save());
+      return new Species(data[i]).save()
+    });
+
+    promises.push(species)
   }
 
-  return Promise.all(promises);
+  return Promise.all(promises)
 }

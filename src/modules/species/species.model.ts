@@ -17,7 +17,6 @@ const speciesSchema = new Schema(
     },
     description: {
       type: Schema.Types.String,
-      default: null,
     },
   },
   {

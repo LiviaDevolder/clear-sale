@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 import Database from '../connect';
 import { createSpecies } from './species.seed';
-
-// Importar outras funções de seed aqui
+import { createLocations } from './locations.seed';
 
 const seedDatabase = async () => {
   const db = Database.getInstance()
@@ -10,6 +9,7 @@ const seedDatabase = async () => {
 
   await Promise.all([
     createSpecies(),
+    createLocations(),
   ])
 
   mongoose.connection.close()

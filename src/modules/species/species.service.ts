@@ -15,6 +15,12 @@ export const readSpecies = async (id: string) => {
   return species
 }
 
+export const readSpeciesByName = async (name: string) => {
+  const species = await Species.findOne({ name })
+
+  return species
+}
+
 export const createSpecies = async (speciesBody: createSpeciesDTO) => {
   if (!speciesBody.name || !speciesBody.description) {
     throw new ApiError(httpStatus.UNPROCESSABLE_ENTITY, 'All fields must be filled correctly')

@@ -31,6 +31,12 @@ export const createLocations = async (locationsBody: createLocationsDTO) => {
   return Locations.create(locations)
 }
 
+export const readLocationsByName = async (name: string) => {
+  const locations = await Locations.findOne({ name })
+
+  return locations
+}
+
 export const readAllLocations = async () => {
   return Locations.find().populate({
       path: "dominant_species_id",
