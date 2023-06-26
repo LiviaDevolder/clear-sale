@@ -13,10 +13,10 @@ interface updatedSpeciesDTO extends Partial<SpeciesDocument> {
 
 let mongoServer
 const speciesData: updatedSpeciesDTO = {
-  name: 'Dog',
-  nameUpdated: 'Cat',
-  description: 'Domestic animal',
-  descriptionUpdated: 'Feline animal'
+  name: 'Gem',
+  nameUpdated: 'Human',
+  description: 'An extraterrestrial species of "magical", roughly humanoid beings',
+  descriptionUpdated: 'A member of the species Homo sapiens'
 }
 let species: SpeciesDocument
 
