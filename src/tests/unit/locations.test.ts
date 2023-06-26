@@ -45,7 +45,7 @@ afterAll(async () => {
   await mongoServer.stop()
 })
 
-describe('Location Model Test', () => {
+describe('Locations Test', () => {
   it('should create and save locations successfully', async () => {
     expect(locations._id).toBeDefined()
     expect(locations.name).toBe(locationsData.name)

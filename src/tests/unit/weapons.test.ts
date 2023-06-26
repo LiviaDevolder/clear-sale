@@ -38,7 +38,7 @@ afterAll(async () => {
   await mongoServer.stop()
 })
 
-describe('Weapons Model Test', () => {
+describe('Weapons Test', () => {
   it('should create and save weapons successfully', async () => {
     expect(weapons._id).toBeDefined()
     expect(weapons.name).toBe(weaponsData.name)

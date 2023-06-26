@@ -35,7 +35,6 @@ export const createCharacters = async (charactersBody: createCharactersDTO) => {
     !charactersBody.name ||
     !charactersBody.age ||
     !charactersBody.main_color ||
-    !charactersBody.is_fusion ||
     !charactersBody.gender ||
     !charactersBody.pronouns ||
     !charactersBody.height ||
