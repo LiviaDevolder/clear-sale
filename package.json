@@ -4,8 +4,10 @@
   "description": "Technical test",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "jest",
-    "start": "ts-node-dev src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
+    "start": "node dist/src/index.js",
     "seed": "ts-node src/database/seeds/index.ts",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix"
