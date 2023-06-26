@@ -14,6 +14,10 @@ const port = process.env["PORT"]!
 const db = Database.getInstance()
 db.connect().then(() => console.log('Connected to database'))
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`)
 })
