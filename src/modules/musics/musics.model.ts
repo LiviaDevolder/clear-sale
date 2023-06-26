@@ -18,10 +18,10 @@ const musicsSchema = new Schema(
       required: true,
       unique: true,
     },
-    album: {
+    album: [{
       type: Schema.Types.String,
       required: true,
-    },
+    }],
     duration: {
       type: Schema.Types.String,
       required: true,
@@ -31,12 +31,12 @@ const musicsSchema = new Schema(
       required: true,
       unique: true,
     },
-    vocalist_id: {
+    vocalist_id: [{
       type: Schema.Types.ObjectId,
       ref: 'Characters',
       required: true,
       index: true,
-    },
+    },]
   },
   {
     collection: 'musics',

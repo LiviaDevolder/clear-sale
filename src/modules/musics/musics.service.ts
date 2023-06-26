@@ -40,12 +40,20 @@ export const createMusics = async (musicsBody: createMusicsDTO) => {
     throw new ApiError(httpStatus.UNPROCESSABLE_ENTITY, 'All fields must be filled correctly')
   }
 
-  validateId(musicsBody.vocalist_id)
-  await readCharacters(musicsBody.vocalist_id)
+  musicsBody.vocalist_id.forEach(async (vocalist) => {
+    validateId(vocalist)
+    await readCharacters(vocalist)
+  })
 
   const musics = new Musics(musicsBody)
 
   return Musics.create(musics)
+}
+
+export const readMusicsByName = async (name: string) => {
+  const musics = await Musics.findOne({ name })
+
+  return musics
 }
 
 export const readAllMusics = async () => {
