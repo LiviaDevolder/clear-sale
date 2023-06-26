@@ -81,6 +81,6 @@ describe('Weapons Model Test', () => {
     await deleteWeapons(weapons._id)
     const foundSpecies = await Weapons.findById(weapons._id)
 
-    expect(foundSpecies).toBeNull();
-  });
+    expect(foundSpecies).toBeNull()
+  })
 })
