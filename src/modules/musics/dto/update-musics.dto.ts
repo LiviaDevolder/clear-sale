@@ -5,5 +5,5 @@ export interface updateMusicsDTO extends Partial<createMusicsDTO> {
   album: string[]
   duration: string
   url: string
-  vocalist_id: string
+  vocalist_id: string[]
 }
