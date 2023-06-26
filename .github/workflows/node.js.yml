@@ -23,6 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - run: npm ci
+    - run: npm ci
     - run: npm run build --if-present
     - run: npm test
 
@@ -32,5 +33,5 @@ jobs:
     - name: Deploy to Heroku
       run: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD:main
       env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_API_KEY: tt-cs
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
