@@ -7,7 +7,7 @@
     "build": "tsc",
     "test": "jest",
     "dev": "ts-node-dev src/index.ts",
-    "start": "npm run build && node --max-old-space-size=8192 dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "seed": "ts-node src/database/seeds/index.ts",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix"
