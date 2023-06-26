@@ -1,0 +1,680 @@
+{
+	"info": {
+		"_postman_id": "6053738f-3144-4093-9876-bcbfb934bf93",
+		"name": "TT-CS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16502035"
+	},
+	"item": [
+		{
+			"name": "Species",
+			"item": [
+				{
+					"name": "Create Species",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"description\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/species",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Species",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/species",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read One Species",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/species/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"species",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Species",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"description\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/species/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"species",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Species",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/species/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"species",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Weapons",
+			"item": [
+				{
+					"name": "Create Weapon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"type\": \"\",\n    \"image\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/weapons",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"weapons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Weapons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/weapons",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"weapons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read One Weapon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/weapons/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"weapons",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Weapon",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"type\": \"\",\n    \"image\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/weapons/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"weapons",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Weapon",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/weapons/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"weapons",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Locations",
+			"item": [
+				{
+					"name": "Create Location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"type\": \"\",\n    \"image\": \"\",\n    \"dominant_species_id\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/locations",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/locations",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read One Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/locations/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Location",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"type\": \"\",\n    \"image\": \"\",\n    \"dominant_species_id\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/locations/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/locations/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "Create Character",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"age\": \"\",\n    \"main_color\": \"\",\n    \"is_fusion\": false,\n    \"gender\": \"\",\n    \"pronouns\": \"\",\n    \"height\": 0,\n    \"nickname\": \"\",\n    \"image\": \"\",\n    \"home_location_id\": \"\",\n    \"species_id\": \"\",\n    \"weapon_id\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/characters",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Characters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/characters",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read One Character",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/characters/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Character",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"age\": \"\",\n    \"main_color\": \"\",\n    \"is_fusion\": false,\n    \"gender\": \"\",\n    \"pronouns\": \"\",\n    \"height\": 0,\n    \"nickname\": \"\",\n    \"image\": \"\",\n    \"home_location_id\": \"\",\n    \"species_id\": \"\",\n    \"weapon_id\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/characters/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Character",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/characters/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Musics",
+			"item": [
+				{
+					"name": "Create Music",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"album\": \"\",\n    \"duration\": \"\",\n    \"url\": \"\",\n    \"vocalist_id\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/musics",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"musics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Musics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/musics",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"musics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read One Music",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/locations/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Music",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"album\": \"\",\n    \"duration\": \"\",\n    \"url\": \"\",\n    \"vocalist_id\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/musics/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"musics",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6496f6528c376936c2715936"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Musics",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/musics/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"musics",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
